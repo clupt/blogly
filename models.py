@@ -11,26 +11,26 @@ def connect_db(app):
     db.app = app
     db.init_app(app)
 
-    class User(db.Model):
-        '''User.'''
+class User(db.Model):
+    '''User.'''
 
-        __tablename__ = "users"
+    __tablename__ = "users"
 
-        id = db.Column(
-            db.Integer,
-            primary_key=True,
-            autoincrement=True)
+    id = db.Column(
+        db.Integer,
+        primary_key=True,
+        autoincrement=True)
 
-        first_name = db.Column(
-            db.String(20),
-            nullbale=False)
+    fname = db.Column(
+        db.String(20),
+        nullable=False)
 
-        last_name = db.Column(
-            db.String(20),
-            nullable=False)
+    lname = db.Column(
+        db.String(20),
+        nullable=False)
 
-        image_url = db.Column(
-            db.String(100),
-            nullable = False,
-            #default = 'IMAGE PATH GOES HERE'
-        )
+    img_url = db.Column(
+        db.String(100),
+        nullable = False,
+        default = '/myspacetom.webp'
+    )
