@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}{{ name }}{% endblock %}
+
+{% block content %}
+
+<img src="{{ image_url }}" style="max-width: 50px;">
+<h1>{{ name }}</h1>
+
+<button id="edit">Edit</button><button id="delete">Delete</button>
+
+{% endblock %}
