@@ -4,8 +4,8 @@
 {% block content %}
 <h1>Edit a user</h1>
 
-<form>
-    <label for = "fname">First Name *</label>
+<form action="/users/{{ user.id }}/edit" method="post">
+    <label for="fname">First Name *</label>
     <input
       id="fname"
       name="fname"
@@ -13,7 +13,7 @@
       value="{{ user.fname }}"
       required>
 
-      <label for = "lname">Last Name *</label>
+      <label for="lname">Last Name *</label>
       <input
       id="lname"
       name="lname"
@@ -21,12 +21,12 @@
       value="{{ user.lname }}"
       required>
 
-      <label for = "image_url">Image URL</label>
+      <label for="img_url">Image URL</label>
       <input
-      id="image_url"
-      name="image_url"
+      id="img_url"
+      name="img_url"
       type="text"
-      value="{{ user.image_url }}">
+      value="{{ user.img_url }}">
 
       <button id="cancel">Cancel</button>
       <button type="submit">Save</button>

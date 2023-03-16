@@ -32,5 +32,5 @@ class User(db.Model):
     img_url = db.Column(
         db.String(100),
         nullable = False,
-        default = '/myspacetom.webp'
+        default = 'https://pbs.twimg.com/profile_images/1237550450/mstom_400x400.jpg'
     )
