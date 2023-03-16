@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+
+<h1>{{ post.title }}</h1>
+
+<div>
+    {{ post.content }}
+    <p>By {{ user.fname }} {{ user.lname}}</p>
+</div>
+<div>
+    <button><a href="/users/{{ user.id }}">Cancel</a></button>
+    <button><a href="/posts/{{ post.id }}/edit">Edit</a></button>
+    <button><a href="/posts/{{ post.id }}/delete">Delete</a></button>
+</div>
+
+{% endblock %}

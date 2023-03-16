@@ -31,7 +31,39 @@ class User(db.Model):
         nullable=False)
 
     img_url = db.Column(
-        db.String(100),
+        db.String(500),
         nullable = False,
-        default = DEFAULT_IMAGE_URL
-    )
+        default = DEFAULT_IMAGE_URL)
+    
+    # relationship defined for direct naviagtion user -> posts and back
+
+
+class Post(db.Model):
+    '''Post.'''
+
+    __tablename__ = "posts"
+
+    id = db.Column(
+        db.Integer,
+        primary_key=True,
+        autoincrement=True)  
+
+    title = db.Column(
+        db.String(80),
+        nullable=False)
+
+    content = db.Column(
+        db.Text,
+        nullable = False) 
+
+    created_at = db.Column(
+        db.DateTime,
+        nullable = False,
+        default = db.func.now)
+
+    user_id = db.Column(
+        db.Integer,
+        db. ForeignKey('users.id'),
+        nullable = False)
+    
+    user = db.relationship('User', backref="posts")
