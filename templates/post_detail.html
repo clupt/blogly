@@ -7,12 +7,14 @@
 
 <div>
     {{ post.content }}
-    <p>By {{ user.fname }} {{ user.lname}}</p>
+    <p>By {{ post.user.fname }} {{ post.user.lname}}</p>
 </div>
 <div>
-    <button><a href="/users/{{ user.id }}">Cancel</a></button>
-    <button><a href="/posts/{{ post.id }}/edit">Edit</a></button>
-    <button><a href="/posts/{{ post.id }}/delete">Delete</a></button>
+    <form action="/posts/{{ post.id }}/delete" class="form" method="post">
+        <button><a href="/users/{{ post.user_id }}">Cancel</a></button>
+        <button><a href="/posts/{{ post.id }}/edit">Edit</a></button>
+        <button type="submit">Delete</button>
+    </form>
 </div>
 
 {% endblock %}

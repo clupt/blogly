@@ -5,7 +5,7 @@
 <h1>Edit Post</h1>
 <!-- TEST: new_post form is working?!-->
 
-<form action="/users/{{ user.id }}/posts/new" method="post">
+<form action="/users/{{ post.user_id }}/posts/new" method="post">
   <label for="title">Title *</label>
   <input id="title" name="title" type="text" value="{{ post.title }}" required>
 

@@ -2,7 +2,7 @@
 {% block title %}Create a post{% endblock %}
 
 {% block content %}
-<h1>Create a post</h1>
+<h1>Add post for {{user.fname}} {{user.lname}}</h1>
 <!-- TEST: new_post form is working?!-->
 
 <form action="/users/{{ user.id }}/posts/new" method="post">
