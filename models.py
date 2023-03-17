@@ -54,16 +54,16 @@ class Post(db.Model):
 
     content = db.Column(
         db.Text,
-        nullable = False)
+        nullable=False)#no spaces around = since these are arguments
 
     created_at = db.Column(
         db.DateTime,
-        nullable = False,
-        default = db.func.now())
+        nullable=False,
+        default=db.func.now())
 
     user_id = db.Column(
         db.Integer,
         db. ForeignKey('users.id'),
-        nullable = False)
+        nullable=False)
 
     user = db.relationship('User', backref="posts")

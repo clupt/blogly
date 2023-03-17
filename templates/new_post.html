@@ -6,13 +6,14 @@
 <!-- TEST: new_post form is working?!-->
 
 <form action="/users/{{ user.id }}/posts/new" method="post">
+    <!-- method in all caps -->
     <label for="title">Title *</label>
     <input id="title" name="title" type="text" required>
 
     <label for="content">Content *</label>
     <input id="content" name="content" type="text" required>
 
-    <button id="cancel">Cancel</button>
+    <button id="cancel"><a href="/users/{{ user.id}}">Cancel</a></button>
     <button type="submit">Add</button>
 
 </form>
